@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload CSV</title>
+</head>
+<body>
+    <h1>Upload Shopify CSV</h1>
+    
+    <form action="{% url 'upload_csv' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}  <!-- This auto-generates form fields from Django -->
+
+        <button type="submit">Process CSV</button>
+    </form>
+</body>
+</html>
